@@ -8,7 +8,7 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
-// const passport = require("./helpers/passport");
+const passport = require("./helpers/passport");
 const session = require("express-session");
 
 mongoose.Promise = Promise;
@@ -25,7 +25,15 @@ const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.
 
 const app = express();
 
-
+//session
+app.use(session({
+  secret: "bliss",
+  resave: false,
+  saveUninitialized: true
+}));
+//initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Middleware Setup
 app.use(logger('dev'));

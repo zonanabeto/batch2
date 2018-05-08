@@ -4,7 +4,7 @@
 
         <div id="text1">
             <h2>We are here to make your ideas real.</h2>
-            <img src="/public/images/689ae0f75501e3edb6f5804edab14510.png" alt="">
+           
         </div>
         
 
@@ -45,20 +45,28 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+            <h5 class="modal-title" id="exampleModalCenterTitle">Sign Up</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
         </div>
         <div class="modal-body">
              <form method="post"  action="/signup">
-
+             <label for="name">Name:</label>
+             <input type="text" name="name" placeholder="John" id="">
+             <label for="lastName">Lastname:</label>
+             <input type="text" name="lastName" placeholder="Appleseed" id="">
+             <label for="email">Email:</label>
+             <input type="email" name="email" placeholder="john@mail.com" id="">
+             <label for="profilePic">Profile Pic:</label>
+             <input type="file" name="profilePic" maxlength="1"  id="">
    
              </form>
         </div>
         <div class="modal-footer">
+            <a href="/auth/google"> <button type="button"  class="btn btn-primary">Google Sign Up</button></a> 
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Submit</button>
+            <button type="button"  class="btn btn-primary">Submit</button>
         </div>
         </div>
     </div>
