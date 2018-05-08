@@ -19,13 +19,39 @@ body {
 }
 
 a {
-  color:rgba(63, 136, 197, 1);;
+  color:rgba(63, 136, 197, 1);
 }
+
 
 a:hover {
   color: rgba(147, 22, 33, 1);
 }
 
+.modal-content{
+  color: rgba(3, 43, 67, 1);
+}
+.btn-primary {
+  color: #fff;
+  background-color:  rgba(147, 22, 33, 1);
+  border-color:  rgba(147, 22, 33, 1);
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color:  #5B0D14;
+  border-color:  #5B0D14;
+}
+
+#login{
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  color: rgba(3, 43, 67, 1);
+}
+
+#login a{
+  color: rgba(147, 22, 33, 1)
+}
 
 #contInd1{
 background-color: steelblue;

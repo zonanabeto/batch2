@@ -4,42 +4,21 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const User = require("../models/User")
 const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
+const LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
+
 
   
-  //serializer
-  passport.serializeUser((user, cb) => {
-    cb(null, user._id);
-  });
-  
-  passport.deserializeUser((id, cb) => {
-    User.findById(id, (err, user) => {
-      if (err) { return cb(err); }
-      cb(null, user);
-    });
-  });
-  
-  //strategy(local)
-  passport.use(new LocalStrategy((username, password, next) => {
-    User.findOne({ email:username }, (err, user) => {
-      if (err) {
-        return next(err);
-      }
-      if (!user) {
-        return next(null, false, { message: "Incorrect username" });
-      }
-      if (!bcrypt.compareSync(password, user.password)) {
-        return next(null, false, { message: "Incorrect password" });
-      }
-  
-      return next(null, user);
-    });
-  }));
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
 
   //google strategy
 
   passport.use(new GoogleStrategy({
-    clientID: "897798642180-3at2l11rv9okso0gfjhdoopptbrjm005.apps.googleusercontent.com",
-    clientSecret: "XTVI_5LSa20PFkDKTayn2nzC",
+    clientID:process.env.CLIENTID,
+    clientSecret:process.env.CLIENTSECRET,
     callbackURL: "/auth/google/callback"
   }, (accessToken, refreshToken, profile, done) => {
     User.findOne({ googleID: profile.id }, (err, user) => {
@@ -53,7 +32,8 @@ const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
 
       const newUser = new User({
         googleID: profile.id,
-        username:profile.displayName,
+        name:profile.name.givenName,
+        lastname:profile.name.familyName,
         email:profile.emails[0].value
       });
   
@@ -66,5 +46,47 @@ const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
     });
   
   }));
+
+
+  //linked in Strategy
+
+  passport.use(new LinkedInStrategy({
+    clientID: process.env.LINKEDIN_KEY,
+    clientSecret: process.env.LINKEDIN_SECRET,
+    callbackURL: "/auth/linkedin/callback",
+    scope: ['r_emailaddress', 'r_basicprofile'],
+  }, function(accessToken, refreshToken, profile, done) {
+    // asynchronous verification, for effect...
+    process.nextTick(function () {
+      User.findOne({ linkedinID: profile.id }, (err, user) => {
+        if (err) {
+          return done(err);
+        }
+        if (user) {
+          return done(null, user);
+        }
+        console.log(profile);
+  
+        const newUser = new User({
+          linkedinID: profile.id,
+          name:profile.firstName,
+          lastname:profile.lastName,
+          email:profile.emailAddress
+        });
+    
+        newUser.save((err) => {
+          if (err) {
+            return done(err);
+          }
+          done(null, newUser);
+        });
+      });
+    });
+  }));
+
+
+
+
+
 
   module.exports = passport;

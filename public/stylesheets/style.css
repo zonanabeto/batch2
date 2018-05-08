@@ -21,6 +21,28 @@ a {
 a:hover {
   color: #931621; }
 
+.modal-content {
+  color: #032b43; }
+
+.btn-primary {
+  color: #fff;
+  background-color: #931621;
+  border-color: #931621; }
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #5B0D14;
+  border-color: #5B0D14; }
+
+#login {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  color: #032b43; }
+
+#login a {
+  color: #931621; }
+
 #contInd1 {
   background-color: steelblue;
   width: 100vw; }

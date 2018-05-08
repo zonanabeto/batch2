@@ -9,21 +9,25 @@
         
 
         <div id="login">
-            <span>Log In or</span>
+            <span>Log In or <a  data-toggle="modal" data-target="#exampleModalCenter" href="">Sign Up</a></span>
         
     <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            {{!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                 Sign Up
-            </button>
-
+            </button> --}}
+            <br>
             <form method="POST" action="/login">
                 <label for="email">Email:</label>
-                <br><br>
+                <br>
                 <input type="email" name="email" placeholder="dream@now.com" id="">
                 <br><br>
                 <label for="password">Password:</label>
-                <br><br>
+                <br>
                 <input type="password" name="password" id="">
+                <br><br>
+                <input type="submit"  class="btn btn-primary" value="Log In">
+                <a href="/auth/linkedin"> <button type="button"  class="btn btn-primary"><i class="fab fa-linkedin fa-lg"></i></i></button></a>
+                <a href="/auth/google"> <button type="button"  class="btn btn-primary"><i class="fab fa-google-plus-square fa-lg"></i></button></a> 
             </form>
         </div>
 
@@ -45,29 +49,54 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalCenterTitle">Sign Up</h5>
+            <h5 style="color:rgba(63, 136, 197, 1)" class="modal-title" id="exampleModalCenterTitle">Sign Up</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
         </div>
         <div class="modal-body">
+
+            {{#if error}}
+            {{error}}
+            {{/if}}
+
              <form method="post"  action="/signup">
              <label for="name">Name:</label>
+             <br>
              <input type="text" name="name" placeholder="John" id="">
+             <br>
              <label for="lastName">Lastname:</label>
+             <br>
              <input type="text" name="lastName" placeholder="Appleseed" id="">
+             <br>
              <label for="email">Email:</label>
-             <input type="email" name="email" placeholder="john@mail.com" id="">
-             <label for="profilePic">Profile Pic:</label>
-             <input type="file" name="profilePic" maxlength="1"  id="">
-   
+             <br>
+             <input type="email" name="email" placeholder="john@mail.com" id="emailform125">
+             <br>
+             <label for="Password">Password:</label>
+             <br>
+             <input type="password" name="password1" placeholder="Password" id="">
+             <br>
+              <label for="Password">Repeat Password:</label>
+             <br>
+             <input type="password" name="password2" placeholder="Password" id="">
+             <br><br>
+
+            <input type="submit" class="btn btn-primary" value="Submit">
              </form>
         </div>
         <div class="modal-footer">
-            <a href="/auth/google"> <button type="button"  class="btn btn-primary">Google Sign Up</button></a> 
+            <a href="/auth/linkedin"> <button type="button"  class="btn btn-primary"><i class="fab fa-linkedin fa-2x"></i></i></button></a>
+            <a href="/auth/google"> <button type="button"  class="btn btn-primary"><i class="fab fa-google-plus-square fa-2x"></i></button></a> 
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button"  class="btn btn-primary">Submit</button>
+            
+            
         </div>
         </div>
     </div>
     </div>
+
+
+    <script>$('#myModal')document.getElementById("exampleModalCenter").on('shown.bs.modal', function () {
+  $('#myInput')document.getElementById("emailform125").trigger('focus')
+})</script>
