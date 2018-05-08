@@ -1,8 +1,62 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.nav {
+  position: fixed;
+  padding-top: 27px;
+  padding-right: 50px;
+  background-color: white;
+  width: 100%;
+  height: 93px;
+}
+
+#navspace{
+  height: 93px;
+  width: 100%;
 }
 
 a {
-  color: #00B7FF;
+  color:rgba(63, 136, 197, 1);;
 }
+
+a:hover {
+  color: rgba(147, 22, 33, 1);
+}
+
+
+#contInd1{
+background-color: steelblue;
+width: 100vw;
+}
+
+
+.container{
+  display: flex;
+  flex-direction: row;
+ justify-content: space-between;
+  height: 600px;
+  margin: 0 0 0 0;
+
+
+}
+
+#login{
+  flex-direction: column;
+  background-color: white;
+  border-radius: 25px;
+  border:2px solid rgba(3, 43, 67, 1);;
+  height: 300px;
+  position: relative;
+  margin-top: 40px;
+  padding: 20px 20px 0 20px;
+
+}
+
+img{
+  width: 300px;
+}
+
+
