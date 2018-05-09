@@ -19,8 +19,10 @@ function isNotAuth(req,res,next){
 
 function passwordVerif(req,res,next){
     if(req.body.password1!==req.body.password2){
-        req.body.error = "Tu password esta mal";
+        console.log(req.body.password1,req.body.password2)
+        req.body.error = "Your password do not match.";
         res.render("index",req.body)
+        return;
     }
     return next();
 }
@@ -39,7 +41,7 @@ router.post('/login',
 
 //local
 router.post('/signup', passwordVerif,
-    (req,res)=>{
+    (req,res,next)=>{
         User.register(req.body, req.body.password1, function(err, user) {
             if (err) return res.send(err);
             console.log("ando acá")

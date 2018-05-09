@@ -67,6 +67,9 @@
              <br>
              <input type="password" name="password1" placeholder="Password" >
              <br>
+            {{#if error}}
+            <h5>{{error}}</h5>
+            {{/if}}
               <label for="Password">Repeat Password:</label>
              <br>
              <input type="password" name="password2" placeholder="Password" >

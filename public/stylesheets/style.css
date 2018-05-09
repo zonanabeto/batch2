@@ -28,6 +28,9 @@ a:hover {
 .modal-content {
   color: #032b43; }
 
+.modal-content h5 {
+  color: #931621; }
+
 .btn-primary {
   color: #fff;
   background-color: #931621;
