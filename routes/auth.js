@@ -25,6 +25,12 @@ function passwordVerif(req,res,next){
     return next();
 }
 
+
+router.get('/logout', (req,res)=>{
+    req.logout();
+    res.redirect('/');
+})
+
 router.post('/login', 
     passport.authenticate('local'), 
     (req,res)=>{
