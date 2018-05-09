@@ -14,13 +14,13 @@ function isNotAuth(req,res,next){
     if(req.isAuthenticated()){
         return next();
     }
-    return res.redirect('/login');
+    return res.redirect('/');
 }
 
 function passwordVerif(req,res,next){
     if(req.body.password1!==req.body.password2){
         console.log(req.body.password1,req.body.password2)
-        req.body.error = "Your password do not match.";
+        req.body.error = "Your passwords do not match.";
         res.render("index",req.body)
         return;
     }
@@ -30,12 +30,14 @@ function passwordVerif(req,res,next){
 
 router.get('/logout', (req,res)=>{
     req.logout();
+    delete req.app.locals.user;
     res.redirect('/');
 })
 
 router.post('/login', 
     passport.authenticate('local'), 
     (req,res)=>{
+        req.app.locals.user = req.user;
         res.redirect('/profile');
     })
 

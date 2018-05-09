@@ -51,8 +51,9 @@ a:hover {
   border-radius: 25px;
   border: 2px solid #032b43;
   height: 300px;
-  position: relative;
+  position: fixed;
   margin-top: 8%;
+  right: 3%;
   padding: 20px 20px 0 20px; }
 
 #login a {
@@ -67,9 +68,20 @@ a:hover {
   height: 500px;
   flex-wrap: wrap; }
 
-.container {
+#help {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-around; }
+
+#help form {
+  border-radius: 25px;
+  border: 2px solid #032b43; }
+
+#container2 {
+  height: 1000px;
+  background-color: tomato;
   margin: 0 0 0 0;
-  flex-wrap: wrap;
-  width: 100%; }
+  width: 100vw; }
 
 /*# sourceMappingURL=style.css.map */

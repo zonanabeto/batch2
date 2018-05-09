@@ -10,8 +10,43 @@
 
 <ul class="nav justify-content-end">
 
+
+
+  {{#if user}}
   <li> 
-        <a href="/"><img src="/public/images/" alt="" srcset=""></a>
+    <a href="/"><img src="/public/images/" alt="" srcset=""></a>
+  </li>
+
+  <li class="nav-item">
+    <div class="dropdown">
+      <a class="nav-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Projects</a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Action</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Another action</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </div>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="modal" data-target="#exampleModalCenter" href="/help">Help</a>
+  </li>
+  <li class="nav-item">
+      <div class="dropdown">
+        <a class="nav-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-user"></i></a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">My Account</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/logout">Logout</a>
+        </div>
+      </div>
+  </li>
+
+
+  {{else}}
+  <li> 
+      <a href="/"><img src="/public/images/" alt="" srcset=""></a>
   </li>
   <li class="nav-item">
     <a class="nav-link " href="#">Our Goal</a>
@@ -29,6 +64,8 @@
     <a class="nav-link" href="#">Contact Us</a>
   </li>
 
+  {{/if}}
+
 </ul>
 
 <div id="navspace">
@@ -36,6 +73,52 @@
 </div>
 
     {{{body}}}
+
+
+
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 style="color:rgba(63, 136, 197, 1)" class="modal-title" id="exampleModalCenterTitle">How can we help you?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+
+
+          <form action="/help" method="post">
+
+
+            <label for="select">Select area:</label>
+            <br>
+            <select name="area" >
+              <option value="frontEnd">Forntend</option>
+              <option value="backEnd">Backend</option>
+              <option value="design">Design</option>
+              <option value="server">Server</option>
+            </select>
+            <br>
+            <label for="problem">What's your problem?</label>
+            <br>
+            <textarea name="description" id="" cols="30" rows="10"></textarea>
+            <br>
+            <input class="btn btn-primary" type="submit" value="Submit">
+
+            
+          </form>
+        </div>
+        <div class="modal-footer">
+            
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            
+            
+        </div>
+        </div>
+    </div>
+    </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>

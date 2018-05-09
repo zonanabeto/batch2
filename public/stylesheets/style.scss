@@ -60,10 +60,10 @@ a:hover {
   border-radius: 25px;
   border:2px solid rgba(3, 43, 67, 1);;
   height: 300px;
-  position: relative;;
+  position: fixed;;
   margin-top: 8%;
+  right: 3%;
   padding: 20px 20px 0 20px;
- 
 }
 
 #login a{
@@ -74,7 +74,6 @@ a:hover {
 background-color: steelblue;
 width: 100vw;
 display: flex;
-
 flex-direction: row;
 justify-content: space-around;
 height: 500px;
@@ -82,10 +81,22 @@ flex-wrap: wrap;
 }
 
 
-.container{
-  
+#help{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-around;
+}
 
-  margin: 0 0 0 0;
-  flex-wrap: wrap;
-  width: 100%;
+#help form{
+  border-radius: 25px;
+  border:2px solid rgba(3, 43, 67, 1);;
+}
+
+
+#container2{
+height: 1000px;
+background-color: tomato;
+margin: 0 0 0 0;
+width: 100vw;
 }
