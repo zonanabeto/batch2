@@ -15,6 +15,7 @@ body {
   height: 93px;
   display: flex;
   align-content: center;
+  z-index: 999;
 }
 
 
@@ -234,11 +235,34 @@ color: rgba(3, 43, 67, 1);
         
         }
 
-
-
         #contInd7 h3,h2{
           color: white;
         } 
+
+        #contInd8{
+          display: flex;
+          flex-direction: row;
+          background-color:  rgba(63, 136, 197, 1);
+          justify-content: space-around;
+          height: 250px;
+          flex-wrap: wrap;
+          padding: 0;
+          margin-bottom: 0;
+          
+          }
+
+          #contInd8 a{
+            color: white;
+          }
+          #contInd8 p{
+            color: white;
+          }
+          #contInd8 li{
+            color: white;
+          }
+
+
+
 
 
 #help{
