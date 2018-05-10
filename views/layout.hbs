@@ -9,7 +9,9 @@
   <body>
 
 <ul class="nav justify-content-end">
-
+  <li>
+    <a href="/"><img  id="logo" src="/images/batch2.png" alt="logo"></a>
+  </li>
 
 
   {{#if user}}
@@ -72,6 +74,8 @@
   
 </div>
 
+
+
     {{{body}}}
 
 
@@ -91,14 +95,21 @@
 
           <form action="/help" method="post">
 
-
+            <label for="selectpro">Select Project:</label>
+            <br>
+              <select name="area" >
+                {{#each user.projects}}
+                <option value="{{this}}">{{this}}</option>
+                {{/each}}
+              </select>
+            <br>
             <label for="select">Select area:</label>
             <br>
             <select name="area" >
-              <option value="frontEnd">Forntend</option>
-              <option value="backEnd">Backend</option>
-              <option value="design">Design</option>
-              <option value="server">Server</option>
+              <option value="FRONTEND">Forntend</option>
+              <option value="BACKEND">Backend</option>
+              <option value="DESIGN">Design</option>
+              <option value="SERVER">Server</option>
             </select>
             <br>
             <label for="problem">What's your problem?</label>

@@ -17,10 +17,18 @@ body {
   align-content: center;
 }
 
+
 #navspace{
   height: 93px;
   width: 100%;
 
+}
+
+#logo{
+  width: 150px;
+  position: fixed;
+  left: 16px;
+  top: -3px;
 }
 
 a {
@@ -100,3 +108,4 @@ background-color: tomato;
 margin: 0 0 0 0;
 width: 100vw;
 }
+

@@ -19,6 +19,12 @@ body {
   height: 93px;
   width: 100%; }
 
+#logo {
+  width: 150px;
+  position: fixed;
+  left: 16px;
+  top: -3px; }
+
 a {
   color: #3f88c5; }
 
