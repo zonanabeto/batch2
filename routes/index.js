@@ -15,7 +15,7 @@ let tp = nodemailer.createTransport({
 
 function isAuthenticated(req,res, next){
   if(req.isAuthenticated()){
-      return res.redirect('/profile')
+      return res.redirect('/dashboard')
   }
   return next();
 }
@@ -42,11 +42,12 @@ router.get('/', isAuthenticated, (req, res, next) => {
   res.render('index');
 });
 
-router.get("/profile", isLoggedIn,(req,res,next)=>{
+router.get("/dashboard", isLoggedIn,(req,res,next)=>{
   req.app.locals.user;
-
-res.render("help")
+res.render("dashboard")
 });
+
+
 
 router.post("/help", isLoggedIn , (req,res,next)=>{
 req.body.user = req.user;

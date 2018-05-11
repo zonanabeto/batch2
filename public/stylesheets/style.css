@@ -221,6 +221,14 @@ a:hover {
 #contInd8 li {
   color: white; }
 
+.dropdown-item:hover {
+  background-color: #3f88c5;
+  color: white; }
+
+.dropdown-item:focus {
+  background-color: #032b43;
+  color: white; }
+
 #help {
   display: flex;
   flex-direction: column;

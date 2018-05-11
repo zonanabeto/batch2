@@ -264,6 +264,16 @@ color: rgba(3, 43, 67, 1);
 
 
 
+.dropdown-item:hover{
+  background-color: rgba(63, 136, 197, 1);
+  color: white;
+}
+
+.dropdown-item:focus{
+  background-color: rgba(3, 43, 67, 1);
+  color: white;
+}
+
 
 #help{
   display: flex;

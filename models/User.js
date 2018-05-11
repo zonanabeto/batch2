@@ -8,6 +8,7 @@ const userSchema = new Schema({
     googleID:String,
     linkedinID:String,
     facebookID:String,
+    profilePic:String,
     email: {
         type:String,
         required:true
