@@ -5,7 +5,7 @@
         <div class="spaceText">
             <h2>We are here to make your ideas come to life.</h2>
             <br><br>
-            <i class="fas fa-rocket fa-10x"></i>
+            <img style="width:500px;" src="/images/web-app-dev-banner.png" alt="">
         </div>
 
         <div class="spaceLog">
@@ -46,7 +46,7 @@
              </a>
              </a>
             </p>
-             <a name="goala"></a>
+             <a id="goala"></a>
         </div>
         <div class="spaceLog">
            
@@ -64,32 +64,32 @@
         
          <label for="blog">Blog:</label>
          <br>
-         <input type="checkbox" name="blog" id="">
+         <input type="checkbox" name="blog" >
          <br>
 
           <label for="ecommerce">Ecomerce:</label>
           <br>
-         <input type="checkbox" name="ecommerce" id="">
+         <input type="checkbox" name="ecommerce" >
          <br>
 
           <label for="info">Informative page:</label>
           <br>
-         <input type="checkbox" name="info" id="">
+         <input type="checkbox" name="info" >
          <br>
 
           <label for="app">App:</label>
           <br>
-         <input type="checkbox" name="app" id="">
+         <input type="checkbox" name="app" >
          <br> 
 
          <label for="email">Email:</label>
          <br>
-         <input type="email" name="email" placeholder="letsdoit@now.com" id="">
+         <input type="email" name="email" placeholder="letsdoit@now.com" >
         <br>
         <br><br>
         <input type="submit"  class="btn btn-primary" value="Submit">
          </form>
-          <a name="submiting"></a>
+          <a id="submiting"></a>
 
         </div>
          
@@ -113,7 +113,7 @@
            <h3>Only worry about the things you love.</h3>
            
            <img src="/images/lite-app-version.png" alt="">
-           <a name="aboutus"></a>
+           <a id="aboutus"></a>
            <br>
             
 
@@ -155,7 +155,7 @@
   
         </div>
         <div class="spaceLog">
-            <a name="projects"></a>
+            <a id="projects" ></a>
         </div>
 </div>
 
@@ -203,7 +203,7 @@
                 </a>
                  
             </div>
-<a name="tech"></a>
+<a id="tech"></a>
   
         </div>
         <div class="spaceLog">
@@ -239,7 +239,7 @@
                     <p>MENU</p> 
                 
                 <li>
-                    <a href="#goala">Our Goal</a>
+                    <a data-scroll href="#goala">Our Goal</a>
                 </li>
                 <li>
                     <a href="#aboutus">About Us</a>
@@ -281,7 +281,7 @@
 
 
 
-<!-- Modal -->
+<!-- Modal help -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -335,6 +335,46 @@
     </div>
 
 
-    <script>$('#myModal')document.getElementById("exampleModalCenter").on('shown.bs.modal', function () {
-  $('#myInput')document.getElementById("emailform125").trigger('focus')
-})</script>
+
+<!-- Modal  Contact Us-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Contact Us</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+                   <form method="post"  action="/contactus">
+             <label for="name">Name:</label>
+             <br>
+             <input type="text" name="name" placeholder="John" >
+             <br>
+             <label for="lastName">Lastname:</label>
+             <br>
+             <input type="text" name="lastName" placeholder="Appleseed" >
+             <br>
+             <label for="email">Email:</label>
+             <br>
+             <input type="email" name="email" placeholder="john@mail.com" id="emailform124">
+             <br>
+            <label for="helpyou">How can we help you?</label>
+            <br>
+            <textarea name="helpyou"  cols="30" rows="10"></textarea>
+             <br><br>
+
+            <input type="submit" class="btn btn-primary" value="Submit">
+             </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
