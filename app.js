@@ -13,7 +13,7 @@ const session = require("express-session");
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/batch2', {useMongoClient: true})
+  .connect(process.env.MONGODB, {useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
