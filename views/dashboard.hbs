@@ -1,0 +1,57 @@
+<!-- account modal -->
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCente" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Your Account</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+           <form method="post"  action="/update">
+           <br>
+           <label for="profilePic">Select a Profile Picture:</label>
+           <br>
+           <input type="file" name="profilePic" >
+           <br>
+            <label for="name">Name:</label>
+             <br>
+             <input type="text" name="name" placeholder="John" >
+             <br>
+             <label for="lastName">Lastname:</label>
+             <br>
+             <input type="text" name="lastName" placeholder="Appleseed" >
+             <br>
+             <label for="email">Email:</label>
+             <br>
+             <input type="email" name="email" placeholder="john@mail.com" id="emailform125">
+             <br>
+             <label for="Password">Old Password:</label>
+             <br>
+             <input type="password" name="password1" placeholder="Password" >
+             <br>
+            {{#if error}}
+            <h5>{{error}}</h5>
+            {{/if}}
+              <label for="Password">New Password:</label>
+             <br>
+             <input type="password" name="password2" placeholder="Password" >
+             <br><br>
+
+            <input type="submit" class="btn btn-primary" value="Submit">
+             </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>

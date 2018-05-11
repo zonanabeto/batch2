@@ -5,7 +5,7 @@ const User = require("../models/User")
 
 function isAuthenticated(req,res, next){
     if(req.isAuthenticated()){
-        return res.redirect('/profile')
+        return res.redirect('/dashboard')
     }
     return next();
 }
@@ -38,7 +38,7 @@ router.post('/login',
     passport.authenticate('local'), 
     (req,res)=>{
         req.app.locals.user = req.user;
-        res.redirect('/profile');
+        res.redirect('/dashboard');
     })
 
 //local
@@ -47,18 +47,15 @@ router.post('/signup', passwordVerif,
         User.register(req.body, req.body.password1, function(err, user) {
             if (err) return res.send(err);
             console.log("ando acá")
-            res.redirect('/profile')
+            res.redirect('/dashboard')
             // passport.authenticate('local')((err, result) => {
             //     console.log("aqui ando");
             //     if (err) return res.send(err);
             //     return res.redirect('/profile');
             // });
-        
-
     });
+});
 
-
-    });
 
 //google auth
 router.get("/auth/google", passport.authenticate("google", {
@@ -68,7 +65,7 @@ router.get("/auth/google", passport.authenticate("google", {
   
   router.get("/auth/google/callback", passport.authenticate("google", {
     failureRedirect: "/",
-    successRedirect: "/profile"
+    successRedirect: "/dashboard"
   }));
 
 //linked in auth
@@ -80,7 +77,7 @@ router.get('/auth/linkedin',
   });
 
   router.get('/auth/linkedin/callback', passport.authenticate('linkedin', {
-    successRedirect: '/profile',
+    successRedirect: '/dashboard',
     failureRedirect: '/'
   }));
 
