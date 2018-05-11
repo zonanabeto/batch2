@@ -12,6 +12,7 @@
     "dotenv": "~4.0.0",
     "express": "~4.16.0",
     "express-session": "^1.15.6",
+    "gulp": "^3.9.1",
     "hbs": "~4.0.1",
     "mongoose": "^4.13.12",
     "morgan": "~1.9.0",
@@ -24,7 +25,8 @@
     "passport-linkedin-oauth2": "^1.5.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^5.0.0",
-    "serve-favicon": "~2.4.5"
+    "serve-favicon": "~2.4.5",
+    "smooth-scroll": "^12.1.5"
   },
   "devDependencies": {
     "nodemon": "^1.12.1"
